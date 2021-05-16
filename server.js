@@ -2,6 +2,7 @@ let express = require('express');
 let app = express();
 let bodyParser = require('body-parser');
 let mysql = require('mysql');
+const Port = process.env.Port || 3000;
 
 //homepage rounte
 app.use(bodyParser.json());
@@ -139,7 +140,7 @@ app.delete('/Api/member/deleteMember', (req, res) => {
 	}
 });
 
-app.listen(3000, () => {
+app.listen(Port, () => {
 	console.log('Node App is running or port 3000');
 });
 
